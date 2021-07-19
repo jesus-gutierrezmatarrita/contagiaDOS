@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v2 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
+        <div class="inner">
+            <div class="justify-content-center align-items-center">
+                <form action="">
+                    <h3>ContagiaDOS</h3>
+
+                    <section id="join" class="join">
+                        <br>
+                        <div class="form-wrapper">
+                            <label for="">Nickname</label>
+                            <input type="text" id="NickName" class="form-control">
+                        </div>
+                        <div class="form-wrapper">
+                            <label for="">Password</label>
+                            <input type="password" id="PasswordUser" class="form-control">
+                        </div>
+
+                    </section>
+
+                    <section id="create" class="create" style="display:none">
+                        <br>
+                        <br>
+                        <div class="form-wrapper">
+                            <label for="">Server Name</label>
+                            <input type="text" id="ServerName" class="form-control">
+                        </div>
+                        <div class="form-wrapper">
+                            <label for="">Password Server</label>
+                            <input type="password" id="PasswordServer" class="form-control">
+                        </div>
+
+                    </section>
+
+                    <section id="gamedetails" class="gamedetails" style="display:none">
+                        <div>
+                            <br />
+                            <br />
+                            <br />
+                            <label id="name"></label><br /><hr />
+                            <label id="owner"></label><br /><hr />
+                            <label id="password"></label><br /><hr />
+                            <label id="players"></label><br /><hr />
+                            <label id="status"></label><br /><hr />
+                            <label id="rounds"></label><br /><hr />
+
+                        </div>
+                    </section>
+
+                </form>
+            </div>
+            <section id="game" style="display:none">
+                <div class="container">
+                    <br />
+                    <br />
+                    <label id="Roundleader"></label><hr />
+                    <label id="nameG"></label><br /><hr />
+                    <label id="statusG"></label><hr />
+                    <label id="roundsG"></label><hr />
+                    <section id="group" style="display:none">
+                    </section>
+                    <section id="question" style="display:none">
+                        <label for="yes_no_radio">Do you want use mask?</label>
+                        <p>
+                            <input type="radio" id="yes" name="yes_no" checked>Yes</input>
+                        </p>
+                        <p>
+                            <input type="radio" id="no" name="yes_no">No</input>
+                        </p>
+                    </section>
+                </div>
+
+            </section>
+            <section id="table" style="display:none">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title">
+
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <div class="table-responsive">
+                                <br>
+                                <table class="table table-bordered table-hover" id="table1">
+
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Server Id
+                                            </th>
+                                            <th>
+                                                Server Name
+                                            </th>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tbody">
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+            <button id="btnback" style=" display:none" onclick="BackJoin()">Back</button>
+            <button id="ready" style=" display:none">Ready</button>
+            <button id="btnStartGame" style=" display:none">Start Game</button>
+            <button id="btnbackchoose" style=" display:none" onclick="BackChoose()">Back</button>
+
+            <button id="readyInGame" style=" display:none">Ready</button>  
+
+            <button id="btncreateP" onclick=" CreateNewGame()" style="display:none">Create Party</button>
+
+            <section id="choose" class="choose" style="display:none">
+                <button onclick="ShowGames()">join Party</button>
+                <button onclick="createParty()">Create Party</button>
+            </section>
+
+
+
+            <button id="btnjoin" onclick="joinFuntion() ">join</button>
+            <select class="select" id="url">
+
+                <option value="https://localhost:44350/">API Estudiantes</option>
+                <option value="http://173.230.130.7/" selected>API Profesor</option>
+            </select>
+        </div>
+    </div> 
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script type="text/javascript">function joinFuntion() { document.getElementById("join").style.display = "none" }</script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
